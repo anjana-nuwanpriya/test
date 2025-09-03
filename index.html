@@ -59,7 +59,7 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
     <div class="photo-grid">         
         <!-- Video Item (Large - Left Side) -->
         <div class="photo-item large">             
-            <video muted loop autoplay>
+            <video autoplay muted playsinline>
                 <source src="videos/cafe-video.mp4" type="video/mp4">
                 <source src="videos/cafe-video.webm" type="video/webm">
                 Your browser does not support the video tag.
@@ -449,5 +449,21 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
         </footer>
         <span class="top" id="to-top"><i class="ri-arrow-up-circle-line"></i></span>
     <script src="index.js"></script>
+
+<script>
+document.querySelectorAll('.photo-item').forEach(item => {
+  item.addEventListener('touchstart', function() {
+    // remove active class from others
+    document.querySelectorAll('.photo-item').forEach(i => i.classList.remove('active'));
+    // add active class to tapped item
+    this.classList.add('active');
+  });
+});
+</script>
+
+
+
+
+
 </body>
 </html> 
