@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+CU:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=inter:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+CU:wght@100..400&display=swap');
 *{
     box-sizing: border-box;
     margin: 0%;
@@ -9,7 +9,7 @@
 }
 body{
     background-color: #000000;
-    font-family: "Lato", sans-serif;
+    font-family: "inter", sans-serif;
 }
 header{
     position: relative;
@@ -150,7 +150,7 @@ header{
     
     font-size: 1.3em;
     padding: 1.5% 0;
-    font-family: Lato", sans-serif";
+    font-family: inter", sans-serif";
     text-align: center;
     margin-bottom: 2.4em;
 }
@@ -191,10 +191,10 @@ header{
     color: #fd671a;
 }
 .head .heading{
-    font-family: 'lato', sans-serif;
+    font-family: 'inter', sans-serif;
 }
 .head .heading_1{
-    font-family: 'Lato', sans-serif;
+    font-family: 'inter', sans-serif;
     color: aliceblue;
     font-size: 2.4em;
 }
@@ -520,7 +520,7 @@ header{
     font-weight: 700;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    font-family: 'Lato', sans-serif;
+    font-family: 'inter', sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -833,7 +833,7 @@ header{
     font-weight: 700;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    font-family: 'Lato', sans-serif;
+    font-family: 'inter', sans-serif;
     text-transform: uppercase;
 }
 
