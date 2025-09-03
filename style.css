@@ -232,35 +232,32 @@ header {
     transform: rotate(-45deg) translate(5px, -5px); /* smaller rotation distance */
 }
 
-/* Mobile menu panel (half-page) */
-/* Mobile menu panel - right side, black background */
+/* Mobile menu - normal dropdown */
 @media (max-width: 768px) {
     ul.nav_items {
-        position: fixed;          /* slide-in panel */
-        top: 0;
-        right: -50%;              /* hidden initially */
-        width: 50%;               /* half of screen */
-        height: 100%;             /* full height */
-        flex-direction: column;   /* vertical links */
-        background-color: #000;   /* black background */
-        padding: 2rem;
-        gap: 1.5rem;
-        border-radius: 0 0 0 0;   /* no rounded corners if you want */
-        transition: right 0.3s ease;
+        position: absolute;        /* below the navbar */
+        top: 60px;                 /* adjust based on navbar height */
+        right: 0;
+        width: 100%;               /* full width */
+        background-color: #000;    /* black background */
+        flex-direction: column;    /* vertical links */
+        padding: 1rem 0;
+        gap: 1rem;
+        display: none;             /* hidden by default */
         z-index: 999;
     }
 
     ul.nav_items.active {
-        right: 0;                 /* slide in menu when active */
+        display: flex;             /* show menu when active */
     }
 
-    /* Show hamburger on mobile */
+    /* Show hamburger menu icon on mobile */
     .nav_menu {
         display: flex;
     }
 }
 
-}
+
 
 
 
