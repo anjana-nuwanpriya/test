@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Restaurant</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        background-color: #111; /* dark background */
+        color: white;           /* all text white */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h2, h3, p, label {
+        color: white;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+    }
+
+    button.submit-btn {
+        background-color: #fd671a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button.submit-btn:hover {
+        background-color: #ff8c42;
+    }
+
+    .nav_items li a:hover {
+        color: #fd671a;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="img/log.png" alt="Logo">
+    </div>
+    <ul class="nav_items" id="nav_links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#services">EAT | DRINK</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><button class="btn">RESERVATION</button></li>
+    </ul>
+    <div class="nav_menu" id="menu_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you! Reach out for reservations, inquiries, or feedback.</p>
+
+    <h2>Our Address</h2>
+    <p>123 Main Street, Your City, Country</p>
+
+    <h2>Call Us</h2>
+    <p>+94 123 456 789</p>
+
+    <h2>Email</h2>
+    <p>info@yourrestaurant.com</p>
+
+    <h2>Send us a Message</h2>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your Email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message" required></textarea>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+</section>
+
+<script>
+const toggle = document.getElementById('menu_btn');
+const menu = document.getElementById('nav_links');
+
+toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    menu.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>

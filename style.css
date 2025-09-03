@@ -955,6 +955,49 @@ header {
     box-shadow: 0 10px 25px rgba(253, 103, 26, 0.5);
 }
 
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: 1fr; /* single column */
+        grid-template-rows: auto;
+        gap: 20px;                 /* spacing between items */
+        margin: 20px auto;
+        padding: 0 50px;
+    }
+
+    /* Reset grid row/column for all items */
+    .photo-item.large,
+    .photo-item:nth-child(2),
+    .photo-item:nth-child(3),
+    .photo-item:nth-child(4) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* Individual photo sizes */
+    .photo-item:nth-child(1) { height: 400px; }
+    .photo-item:nth-child(2) { height: 400px; }
+    .photo-item:nth-child(3) { height: 400px; }
+    .photo-item:nth-child(4) { height: 400px; }
+
+    /* Add extra spacing if needed */
+    .photo-item {
+        border-radius: 15px;
+        margin-bottom: 50px;       /* spacing between images */
+    }
+
+    .overlay-text {
+        font-size: 1.2em;
+        letter-spacing: 1px;
+    }
+
+    .video-play-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+}
+
+
 /* ========================================
    MENU GALLERY GRID
    ======================================== */
@@ -1033,7 +1076,7 @@ header {
     letter-spacing: 1px;
 }
 
-.menu-item:nth-child(1) {
+:nth-child(1) {
     grid-row: 1;
     grid-column: 1 / 3;
 }
@@ -1057,6 +1100,131 @@ header {
     grid-row: 2;
     grid-column: 3;
 }
+/* Menu Item Hover / Active Effect */
+
+
+/* Hover/Active Effect */
+.menu-item:hover img,
+.menu-item.active img {
+    filter: grayscale(0%) contrast(1.2);
+    transform: scale(1.1);
+}
+
+.menu-item:hover,
+.menu-item.active {
+    transform: scale(1.03);
+    box-shadow: 0 20px 50px rgba(253, 103, 26, 0.3);
+    border-color: #fd671a;
+}
+
+/* Overlay color effect */
+/* .menu-item::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(253, 103, 26, 0.4));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 20px;
+}
+
+.menu-item:hover::after,
+.menu-item.active::after {
+    opacity: 1;
+} */
+
+/* Overlay text (optional, like photo gallery) */
+.menu-overlay-text {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    font-family: 'inter', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Video play button (if menu has videos) */
+.menu-video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(253, 103, 26, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    z-index: 3;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+    border: 3px solid rgba(255,255,255,0.2);
+}
+
+.menu-item:hover .menu-video-play-btn,
+.menu-item.active .menu-video-play-btn {
+    opacity: 1;
+    background: #fd671a;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 10px 25px rgba(253, 103, 26, 0.5);
+}
+
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr; /* single column */
+        grid-template-rows: auto;   /* rows adjust automatically */
+        gap: 20px;                  /* spacing between items */
+        margin: 20px auto;
+        padding: 0 50px;
+    }
+
+    /* Reset grid row/column for all items */
+    .menu-item:nth-child(1),
+    .menu-item:nth-child(2),
+    .menu-item:nth-child(3),
+    .menu-item:nth-child(4),
+    .menu-item:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* Individual menu item sizes */
+    .menu-item:nth-child(1) { height: 200px; }
+    .menu-item:nth-child(2) { height: 200px; }
+    .menu-item:nth-child(3) { height: 200px; }
+    .menu-item:nth-child(4) { height: 200px; }
+    .menu-item:nth-child(5) { height: 200px; }
+
+    /* Add extra spacing between items */
+    .menu-item {
+        border-radius: 15px;
+        margin-bottom: 50px; /* spacing between images */
+    }
+
+    /* Optional overlay text (if you have any) */
+    .menu-overlay-text {
+        font-size: 1.2em;
+        letter-spacing: 1px;
+    }
+
+    /* Optional play button (if any menu videos) */
+    .menu-video-play-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+}
+
 
 /* ========================================
    RESERVATION SECTION

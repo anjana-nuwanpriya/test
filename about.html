@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Restaurant</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        background-color: #111; /* dark background */
+        color: white;           /* all text white */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h2, h3, p {
+        color: white;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    /* Navbar link hover */
+    .nav_items li a:hover {
+        color: #fd671a;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="img/log.png" alt="Logo">
+    </div>
+    <ul class="nav_items" id="nav_links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#services">EAT | DRINK</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><button class="btn">RESERVATION</button></li>
+    </ul>
+    <div class="nav_menu" id="menu_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- About Section -->
+<section id="about">
+    <h1>About Us</h1>
+    <p>Welcome to our restaurant! We are dedicated to providing the finest dining experience with fresh ingredients, delicious meals, and excellent customer service.</p>
+
+    <h2>Our Story</h2>
+    <p>Founded in 2020, our restaurant started with a passion for great food and a warm environment where friends and families can gather to enjoy a memorable meal.</p>
+
+    <h2>Our Mission</h2>
+    <p>Our mission is to create an unforgettable dining experience for every guest, combining high-quality food with friendly service in a cozy atmosphere.</p>
+
+    <h2>Our Team</h2>
+    <p>Our talented chefs and staff work tirelessly to craft delightful dishes, ensuring every bite is full of flavor and love.</p>
+</section>
+
+<script>
+const toggle = document.getElementById('menu_btn');
+const menu = document.getElementById('nav_links');
+
+toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    menu.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>

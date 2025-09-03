@@ -22,8 +22,8 @@
         <ul class="nav_items" id="nav_links">
             <li><a href="#home">HOME</a></li>
             <li><a href="#services">EAT | DRINK</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
             <li><button class="btn">RESERVATION</button></li>
         </ul>
 
@@ -455,29 +455,37 @@
 
 
 <script>
-  const items = document.querySelectorAll('.photo-item');
+  // Function to activate items on scroll (mobile) or hover (desktop)
+  function activateOnScrollOrHover(selector) {
+    const items = document.querySelectorAll(selector);
 
-  if (window.innerWidth <= 768) {
-    // MOBILE: activate on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        } else {
-          entry.target.classList.remove('active');
-        }
+    if (window.innerWidth <= 768) {
+      // MOBILE: activate on scroll
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          } else {
+            entry.target.classList.remove('active');
+          }
+        });
+      }, { threshold: 1 }); // Trigger when fully visible
+
+      items.forEach(item => observer.observe(item));
+    } else {
+      // DESKTOP: activate on hover/cursor touch
+      items.forEach(item => {
+        item.addEventListener('mouseenter', () => item.classList.add('active'));
+        item.addEventListener('mouseleave', () => item.classList.remove('active'));
       });
-    }, { threshold: 0.3 }); // Trigger when 30% is visible
-
-    items.forEach(item => observer.observe(item));
-  } else {
-    // DESKTOP: activate on hover/cursor touch
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => item.classList.add('active'));
-      item.addEventListener('mouseleave', () => item.classList.remove('active'));
-    });
+    }
   }
+
+  // Apply effect to both photo gallery and menu gallery
+  activateOnScrollOrHover('.photo-item');
+  activateOnScrollOrHover('.menu-item');
 </script>
+
 <script>
 
 const toggle = document.getElementById('menu_btn');
