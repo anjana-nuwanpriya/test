@@ -83,6 +83,9 @@ header {
 /* ========================================
    NAVIGATION BAR - DESKTOP & MOBILE
    ======================================== */
+/* ========================================
+   NAVIGATION BAR - DESKTOP & MOBILE
+   ======================================== */
 .navbar {
     width: 100%;
     padding: 15px 25px;
@@ -109,10 +112,9 @@ header {
 .logo {
     font-size: 2.2em;
     font-weight: 700;
-    flex: 1;
-    color: #fff;
     display: flex;
     align-items: center;
+    color: #fff;
     transition: color 0.3s ease;
 }
 
@@ -131,12 +133,13 @@ header {
 /* Navigation menu container */
 .nav_items {
     display: flex;
-    justify-content: center;
+    flex-direction: row;   /* horizontal on desktop */
+    gap: 20px;
     align-items: center;
-    flex: 2;
     list-style: none;
 }
 
+/* Menu items */
 .nav_items li {
     padding: 1em 1.5em;
     position: relative;
@@ -152,7 +155,7 @@ header {
     text-transform: uppercase;
 }
 
-/* Hover underline effect for navigation links */
+/* Hover underline effect */
 .nav_items li::after {
     content: '';
     width: 0;
@@ -175,9 +178,9 @@ header {
     transform: translateY(-2px);
 }
 
-/* Mobile menu toggle button */
+/* Mobile menu toggle button (hamburger) */
 .nav_menu {
-    display: none;
+    display: none;             /* hidden on desktop */
     font-size: 1.8rem;
     cursor: pointer;
     color: white;
@@ -190,9 +193,24 @@ header {
     padding: 0;
 }
 
+/* Mobile menu toggle button (hamburger) - small & cute */
+.nav_menu {
+    display: none;             /* hidden on desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;               /* smaller width */
+    height: 22px;              /* smaller height */
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
 .nav_menu span {
     display: block;
-    height: 4px;
+    height: 3px;               /* thinner bars */
     width: 100%;
     background: linear-gradient(45deg, #fd671a, #ff8c42);
     border-radius: 2px;
@@ -202,7 +220,7 @@ header {
 
 /* Hamburger menu animation */
 .nav_menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
+    transform: rotate(45deg) translate(5px, 5px); /* smaller rotation distance */
 }
 
 .nav_menu.active span:nth-child(2) {
@@ -211,8 +229,72 @@ header {
 }
 
 .nav_menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
+    transform: rotate(-45deg) translate(5px, -5px); /* smaller rotation distance */
 }
+
+/* Mobile menu panel (half-page) */
+/* Mobile menu panel - right side, black background */
+@media (max-width: 768px) {
+    ul.nav_items {
+        position: fixed;          /* slide-in panel */
+        top: 0;
+        right: -50%;              /* hidden initially */
+        width: 50%;               /* half of screen */
+        height: 100%;             /* full height */
+        flex-direction: column;   /* vertical links */
+        background-color: #000;   /* black background */
+        padding: 2rem;
+        gap: 1.5rem;
+        border-radius: 0 0 0 0;   /* no rounded corners if you want */
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    ul.nav_items.active {
+        right: 0;                 /* slide in menu when active */
+    }
+
+    /* Show hamburger on mobile */
+    .nav_menu {
+        display: flex;
+    }
+}
+
+}
+
+
+
+/* ========================================
+   RESPONSIVE MOBILE STYLING
+   ======================================== */
+@media screen and (max-width: 768px) {
+    .nav_items {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        flex-direction: column;    /* vertical on mobile */
+        background: rgba(0,0,0,0.95);
+        border-radius: 8px;
+        padding: 20px 0;
+        display: none;             /* hidden initially */
+        gap: 0;
+    }
+
+    .nav_items.active {
+        display: flex;            /* show when hamburger clicked */
+    }
+
+    .nav_items li {
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    .nav_menu {
+        display: flex;            /* show hamburger on mobile */
+    }
+}
+
 
 /* ========================================
    BUTTONS STYLING

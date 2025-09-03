@@ -11,43 +11,46 @@
 />
 </head>
 <body>
-    <header id="home">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="img/log.png" alt="">
-                <!-- <span>food in</span> -->
-            </div>
+<header id="home">
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/log.png" alt="Logo">
+        </div>
 
-            <ul class="nav_items" id="nav_links">
-                <div class="item">
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#services">EAT | DRINK</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </div>
-                
-                <div>
-                    <button class="btn">RESERVATION</button>
-                </div>
-            </ul>
+        <!-- Navigation Links -->
+        <ul class="nav_items" id="nav_links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#services">EAT | DRINK</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><button class="btn">RESERVATION</button></li>
+        </ul>
 
-            <div class="nav_menu" id="menu_btn">
-                <i class="ri-menu-line"></i>
-            </div>
-        </nav>
-        <section class="main">
+        <!-- Hamburger Menu -->
+        <div class="nav_menu" id="menu_btn">
+         <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+        </div>
+    </nav>
 
-            <h2 class="heading_1">ENERGIZED YOU VIBE WITH “CC”</h2>
-            <h1 class="heading">Cafe Connect is a privately held café based in Kiribathgoda, Western Province, Sri Lanka,It specializes in offering premium coffee, 
-refreshing beverages, and a variety of freshly prepared meals and snacks. The café is designed to provide a warm and welcoming
-environment, making it an ideal spot for casual meet-ups, professional gatherings, or simply enjoying a relaxing break. Cafe Connect 
-is dedicated to delivering qualityflavors, excellent service, and a memorable dining experience for all its guests.</h1>
-            <div class="main_btn">
-                <button class="btn btn1">DISCOVER US</button>
+    <!-- Main Section -->
+    <section class="main">
+        <h2 class="heading_1">ENERGIZED YOU VIBE WITH “CC”</h2>
+        <h1 class="heading">
+            Cafe Connect is a privately held café based in Kiribathgoda, Western Province, Sri Lanka. 
+            It specializes in offering premium coffee, refreshing beverages, and a variety of freshly prepared meals and snacks.
+            The café provides a warm and welcoming environment, ideal for casual meet-ups, professional gatherings, or simply enjoying a relaxing break. 
+            Cafe Connect is dedicated to delivering quality flavors, excellent service, and a memorable dining experience for all its guests.
+        </h1>
+        <div class="main_btn">
+            <button class="btn btn1">DISCOVER US</button>
+        </div>
+    </section>
+</header>
 
-            </div>
-        </section>
-           </header>
+
 
 <!-- Photo & Video Gallery Section -->
 <section class="photo-gallery sec">     
@@ -475,9 +478,17 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
     });
   }
 </script>
+<script>
+
+const toggle = document.getElementById('menu_btn');
+const menu = document.getElementById('nav_links');
+
+toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active'); // hamburger animation
+    menu.classList.toggle('active');   // slide in menu
+});
 
 
-
-
+</script>
 </body>
 </html> 
