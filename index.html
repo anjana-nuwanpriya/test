@@ -52,7 +52,7 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
 <!-- Photo & Video Gallery Section -->
 <section class="photo-gallery sec">     
     <div class="head">         
-        <h1 class="heading_1">Our <span>Gallery</span></h1>         
+        <h1 class="heading_1">Our Gallery</span></h1>         
         <p class="heading">Experience the atmosphere of Cafe Connect</p>     
     </div>          
     
@@ -80,7 +80,7 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
         
         <!-- Image 3 - Bottom Right (First Half) -->
         <div class="photo-item">             
-            <img src="img/barista-working.jpg" alt="Barista at Work">
+            <img src="img/DSC01874.JPG" alt="Barista at Work">
             <div class="photo-overlay">                 
                 <div class="overlay-text">Passionate<br>Baristas</div>             
             </div>         
@@ -88,7 +88,7 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
         
         <!-- Image 4 - Bottom Right (Second Half) - Optional -->
         <div class="photo-item">             
-            <img src="img/coffee-service.jpg" alt="Coffee Service">
+            <img src="img/DSC01888.JPG" alt="Coffee Service">
             <div class="photo-overlay">                 
                 <div class="overlay-text">Personal<br>Service</div>             
             </div>         
@@ -101,11 +101,180 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
      <section class="sec services" id="services">
 
         <div class="head">
-            <h3 class="heading_1">our services</h3>
-            <h1 class="heading">best <span>quality food</span> <br>order now</h1>
+            <h2 class="heading_1">WHERE FLAVOUR MEETS VIBE!</h2>
+            <h1 class="heading">Sri Lanka’s culinary journey is one of diversity, heritage, and unforgettable tastes. At Cafe Connect, we celebrate this journey by bringing together the finest flavors from land and sea, served with warmth and creativity. Our promise? To craft not just meals, but memorable experiences for every guest who walks through our doors.</h1>
+              <h1 class="heading">With a passion for quality, a love for community, and partnerships that share our vision, Cafe Connect is more than just a café — it’s a place where food, culture, and people truly connect.</h1>
+<button class="btn btn1">SPECIALTY COFFEE IN SRI LANKA</button>
+
+
+
+<h2 class="heading_1">DISCOVER OUR MENU</h2>
+
+<!-- Menu Gallery Section -->
+<section class="menu-gallery sec">
+    <div class="head">
+        <h1 class="heading_1">Our Menu</h1>
+        <p class="heading">Explore our delicious offerings</p>
+    </div>
+    
+    <div class="menu-grid">
+        <!-- Menu Image 1 -->
+        <div class="menu-item">
+            <a href="pdfs/coffee-menu.pdf" target="_blank">
+                <img src="img/coffee-menu-cover.jpg" alt="Coffee Menu">
+            </a>
+        </div>
+        
+        <!-- Menu Image 2 -->
+        <div class="menu-item">
+            <a href="pdfs/food-menu.pdf" target="_blank">
+                <img src="img/food-menu-cover.jpg" alt="Food Menu">
+            </a>
+        </div>
+        
+        <!-- Menu Image 3 -->
+        <div class="menu-item">
+            <a href="pdfs/dessert-menu.pdf" target="_blank">
+                <img src="img/dessert-menu-cover.jpg" alt="Dessert Menu">
+            </a>
         </div>
 
-        <div class="boxes">
+        <!-- Menu Image 4 -->
+        <div class="menu-item">
+            <a href="pdfs/drinks-menu.pdf" target="_blank">
+                <img src="img/drinks-menu-cover.jpg" alt="Drinks Menu">
+            </a>
+        </div>
+
+        <!-- Menu Image 5 -->
+        <div class="menu-item">
+            <a href="pdfs/specials-menu.pdf" target="_blank">
+                <img src="img/specials-menu-cover.jpg" alt="Specials Menu">
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+    <script>
+        // Handle video play button click
+        const playBtn = document.querySelector('.video-play-btn');
+        const video = document.querySelector('video');
+        
+        if (playBtn && video) {
+            playBtn.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    this.style.opacity = '0';
+                } else {
+                    video.pause();
+                    this.style.opacity = '1';
+                }
+            });
+
+            // Hide play button when video is playing
+            video.addEventListener('play', function() {
+                playBtn.style.opacity = '0';
+            });
+
+            // Show play button when video is paused
+            video.addEventListener('pause', function() {
+                playBtn.style.opacity = '1';
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="heading_1">SPECIAL PARTY | KARAOKE | MOVIES | MEETINGS</span></h1>  
+
+
+
+
+
+
+<section class="reservation-section">
+  
+  <!-- Left side image -->
+  <div class="left-image">
+    <img src="img/DSC01869.png" alt="Cafe Interior">
+  </div>
+  
+  <!-- Right side reservation form -->
+  <div class="reservation-form">
+    <h2>Make a Reservation</h2>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" placeholder="Enter your phone" required>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" required>
+
+      <label for="time">Time</label>
+      <input type="time" id="time" required>
+
+      <label for="guests">Number of Guests</label>
+      <input type="number" id="guests" min="1" max="20" required>
+
+      <button type="submit">Reserve Now</button>
+    </form>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="boxes">
 
             <div class="box">
                 <img src="img/pic1.png" alt="">
@@ -124,8 +293,26 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
             </div>
         </div>
      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      <!-- _________about -->
-      <section class="sec about" id="about">
+      <!-- <section class="sec about" id="about">
 
         <div class="head about_heading">
             <h3 class="heading_1">About us</h3>
@@ -166,7 +353,7 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
             
         </div>
       </section>
-      <!-- _________contact -->
+      <!-- _________contact --
        <section class="sec contact" id="contact">
         <div class="contact_box">
             <div class="left_box">
@@ -179,9 +366,27 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
                 <img src="img/right.png" alt="">
             </div>
         </div>
-       </section>
+       </section> --> 
+
+
+
+
+
+       <!-- Google Maps Iframe -->
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2733974669095!2d79.9279249762538!3d6.9770343930237555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257004157bc67%3A0x52ee4e50727dcf31!2sCafe%20Connect!5e0!3m2!1sen!2slk!4v1756899039827!5m2!1sen!2slk" 
+    style="border:0; width:100%; height:450px; padding: 20px;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+<!-- Map Div -->
+<div id="map" style="height: 500px; width: 100%; padding: 20px;"></div>
+
+
        <!-- _________footer -->
-        <!-- <footer>
+     <footer>
             <div class="sec footer_container">
 
                 <div class="footer_col">
@@ -231,11 +436,18 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
                 </div>
 
             </div>
-            <div class="footer_bar">
+            <!-- <div class="footer_bar">
                 copyright @ 2024 Anna Coding Corner. All right reserved.
-            </div>
+            </div> -->
+
+
+
+
+
+
+
         </footer>
         <span class="top" id="to-top"><i class="ri-arrow-up-circle-line"></i></span>
     <script src="index.js"></script>
 </body>
-</html> -->
+</html> 
