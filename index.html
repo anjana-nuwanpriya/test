@@ -450,10 +450,12 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
         <span class="top" id="to-top"><i class="ri-arrow-up-circle-line"></i></span>
     <script src="index.js"></script>
 
- <script>
-    // Use IntersectionObserver to trigger "active" effect on scroll
-    const items = document.querySelectorAll('.photo-item');
 
+<script>
+  const items = document.querySelectorAll('.photo-item');
+
+  if (window.innerWidth <= 768) {
+    // MOBILE: activate on scroll
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -465,8 +467,14 @@ is dedicated to delivering qualityflavors, excellent service, and a memorable di
     }, { threshold: 0.3 }); // Trigger when 30% is visible
 
     items.forEach(item => observer.observe(item));
-  </script>
-
+  } else {
+    // DESKTOP: activate on hover/cursor touch
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => item.classList.add('active'));
+      item.addEventListener('mouseleave', () => item.classList.remove('active'));
+    });
+  }
+</script>
 
 
 
