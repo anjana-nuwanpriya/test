@@ -440,7 +440,7 @@ header {
     position: relative;
 }
 
-.head .heading_1::after {
+/* .head .heading_1::after {
     content: '';
     width: 100px;
     height: 4px;
@@ -450,7 +450,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
-}
+} */
 
 .heading span {
     color: #fd671a;
