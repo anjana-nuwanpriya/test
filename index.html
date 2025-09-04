@@ -107,8 +107,9 @@
             <h2 class="heading_1">WHERE FLAVOUR MEETS VIBE!</h2>
             <h1 class="heading">Sri Lanka’s culinary journey is one of diversity, heritage, and unforgettable tastes. At Cafe Connect, we celebrate this journey by bringing together the finest flavors from land and sea, served with warmth and creativity. Our promise? To craft not just meals, but memorable experiences for every guest who walks through our doors.</h1>
               <h1 class="heading">With a passion for quality, a love for community, and partnerships that share our vision, Cafe Connect is more than just a café — it’s a place where food, culture, and people truly connect.</h1>
-<button class="btn btn1">SPECIALTY COFFEE IN SRI LANKA</button>
-
+<div class="highlight-box">
+  SPECIALTY COFFEE IN SRI LANKA
+</div>
 
 
 <h2 class="heading_1">DISCOVER OUR MENU</h2>
@@ -469,7 +470,7 @@
             entry.target.classList.remove('active');
           }
         });
-      }, { threshold: 1 }); // Trigger when fully visible
+      }, { threshold: 0.7 }); // Trigger when fully visible
 
       items.forEach(item => observer.observe(item));
     } else {
