@@ -31,23 +31,28 @@
 
             <!-- Mobile Hamburger Menu -->
             <div class="nav_menu" id="menu_btn">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
 
         <!-- Hero Section -->
         <section class="main">
-            <h2 class="heading_1">ENERGIZED YOU VIBE WITH "CC"</h2>
-            <h1 class="heading">
-                Cafe Connect is a privately held café based in Kiribathgoda, Western Province, Sri Lanka. 
-                It specializes in offering premium coffee, refreshing beverages, and a variety of freshly prepared meals and snacks.
-                The café provides a warm and welcoming environment, ideal for casual meet-ups, professional gatherings, or simply enjoying a relaxing break. 
-                Cafe Connect is dedicated to delivering quality flavors, excellent service, and a memorable dining experience for all its guests.
-            </h1>
+            <h2 class="heading_1">ENERGIZED YOUR VIBE WITH "CC"</h2>
+            <div class="about_text">
+                <h1>
+                    Cafe Connect is a privately held café based in Kiribathgoda, Western Province, Sri Lanka. 
+                    It specializes in offering premium coffee, refreshing beverages, and a variety of freshly prepared meals and snacks.
+                    The café provides a warm and welcoming environment, ideal for casual meet-ups, professional gatherings, or simply enjoying a relaxing break. 
+                    Cafe Connect is dedicated to delivering quality flavors, excellent service, and a memorable dining experience for all its guests.
+                </h1>
+            </div>
+
             <div class="main_btn">
-                <button class="btn btn1">DISCOVER US</button>
+                <a href="about.html">
+                    <button class="btn btn1">DISCOVER US</button>
+                </a>
             </div>
         </section>
     </header>
@@ -273,109 +278,6 @@
     <span class="top" id="to-top"><i class="ri-arrow-up-circle-line"></i></span>
 
     <!-- ========== JAVASCRIPT SECTION ========== -->
-    <script src="index.js"></script>
-
-    <script>
-        // ========== VIDEO PLAYER CONTROLS ==========
-        // Handle video play button click functionality
-        const playBtn = document.querySelector('.video-play-btn');
-        const video = document.querySelector('video');
-        
-        if (playBtn && video) {
-            // Play/pause video when button is clicked
-            playBtn.addEventListener('click', function() {
-                if (video.paused) {
-                    video.play();
-                    this.style.opacity = '0'; // Hide play button when playing
-                } else {
-                    video.pause();
-                    this.style.opacity = '1'; // Show play button when paused
-                }
-            });
-
-            // Hide play button when video starts playing
-            video.addEventListener('play', function() {
-                playBtn.style.opacity = '0';
-            });
-
-            // Show play button when video is paused
-            video.addEventListener('pause', function() {
-                playBtn.style.opacity = '1';
-            });
-        }
-
-        // ========== RESPONSIVE GALLERY INTERACTIONS ==========
-        // Function to activate items on scroll (mobile) or hover (desktop)
-        function activateOnScrollOrHover(selector) {
-            const items = document.querySelectorAll(selector);
-
-            if (window.innerWidth <= 768) {
-                // MOBILE: activate on scroll using Intersection Observer
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
-                        } else {
-                            entry.target.classList.remove('active');
-                        }
-                    });
-                }, { threshold: 0.7 }); // Trigger when 70% of element is visible
-
-                items.forEach(item => observer.observe(item));
-            } else {
-                // DESKTOP: activate on hover/cursor touch
-                items.forEach(item => {
-                    item.addEventListener('mouseenter', () => item.classList.add('active'));
-                    item.addEventListener('mouseleave', () => item.classList.remove('active'));
-                });
-            }
-        }
-
-        // Apply interactive effects to both photo gallery and menu gallery
-        activateOnScrollOrHover('.photo-item');
-        activateOnScrollOrHover('.menu-item');
-
-        // ========== MOBILE NAVIGATION TOGGLE ==========
-        // Handle hamburger menu toggle for mobile navigation
-        const toggle = document.getElementById('menu_btn');
-        const menu = document.getElementById('nav_links');
-
-        toggle.addEventListener('click', () => {
-            toggle.classList.toggle('active'); // Animate hamburger icon
-            menu.classList.toggle('active');   // Show/hide mobile menu
-        });
-    </script>
-
-    <style>
-        /* ========== CSS FIX FOR MAP SPACING ========== */
-        /* Remove space between map and footer */
-        .map-section {
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-        }
-        
-        .map-section iframe {
-            display: block;
-            width: 100%;
-            height: 400px;
-            border: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        footer {
-            margin-top: 0 !important;
-            padding-top: 2rem;
-        }
-        
-        /* Ensure no extra spacing */
-        .special-events {
-            margin-bottom: 2rem;
-        }
-        
-        .reservation-section {
-            margin-bottom: 0;
-        }
-    </style>
+    <script src="script.js"></script>
 </body>
 </html>
