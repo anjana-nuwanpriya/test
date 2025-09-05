@@ -51,3 +51,4 @@ menuBtn.addEventListener('click',(e)=>{
     const isOpen = navLinks.classList.contains('open')
     menuIcon.setAttribute('class', isOpen ? 'ri-close-line' : 'ri-menu-line')
 })
+

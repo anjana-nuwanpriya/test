@@ -176,6 +176,7 @@ header {
     gap: 20px;
     align-items: center;
     list-style: none;
+    right: -100%;
 }
 
 /* Menu items */
@@ -216,93 +217,71 @@ header {
     color: #fd671a;
     transform: translateY(-2px);
 }
+/* hambuggerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr */
+/* NAV ITEMS */
+.nav_items {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
 
-/* Mobile menu toggle button (hamburger) */
+/* HAMBURGER MENU */
 .nav_menu {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: white;
+    display: none;             /* hide on desktop */
     flex-direction: column;
-    justify-content: space-around;
-    width: 35px;
-    height: 30px;
-    background: transparent;
-    border: none;
-    padding: 0;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
 .nav_menu span {
     display: block;
     height: 3px;
     width: 100%;
-    background: linear-gradient(45deg, #fd671a, #ff8c42);
+    background-color: #ff7b00;
     border-radius: 2px;
     transition: all 0.3s ease;
-    transform-origin: center;
 }
 
-/* Hamburger menu animation */
+/* Hamburger animation when clicked */
 .nav_menu.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
 .nav_menu.active span:nth-child(2) {
     opacity: 0;
-    transform: scaleX(0);
 }
 
 .nav_menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile menu - dropdown */
+/* RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
     .nav_items {
         position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0,0,0,0.98);
-        backdrop-filter: blur(15px);
+        top: 60px;
+        right: -100%;
         flex-direction: column;
-        justify-content: center;
-        padding: 60px 0;
-        gap: 1rem;
-        z-index: 998;
-        transition: left 0.4s ease;
+        background-color: #000000;
+        width: 200px;
+        padding: 20px;
+        margin: 0;           /* remove default ul margin */
+        list-style: none;    /* remove bullets */
+        overflow: hidden;    /* prevent scroll lines */
+        box-shadow: none;    /* remove any shadow causing line */
+        transition: right 0.3s ease;
+        z-index: 999;
     }
 
     .nav_items.active {
-        left: 0;
-    }
-
-    .nav_items li {
-        padding: 20px 0;
-        text-align: center;
-        width: 100%;
-    }
-
-    .nav_items li a {
-        font-size: 18px;
-        display: block;
-        padding: 20px;
-    }
-
-    .nav_items li::after {
-        bottom: 10px;
-        height: 3px;
-        width: 0;
-    }
-
-    .nav_items li:hover::after {
-        width: 60%;
+        right: 0;           /* slide menu in */
     }
 
     .nav_menu {
-        display: flex;
-        z-index: 999;
+        display: flex;       /* show hamburger on mobile */
     }
 }
 
@@ -414,15 +393,23 @@ header {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 30px;
+ 
+    margin-top: 70px;
 }
 
 .about_text {
-    max-width: 900px;           
+    max-width: 1000px;           
     margin: 40px auto 50px auto;   
     padding: 20px;               
     border-radius: 15px;         
 }
+
+.custom-text {
+    font-size: 16px;      /* fixed size for all screens */
+    font-weight: normal;  /* unbold */
+    line-height: 1.5;     /* optional: makes long text easier to read */
+}
+
 
 /* ========================================
    SECTIONS LAYOUT
@@ -437,6 +424,7 @@ header {
 .head {
     text-align: center;
     margin-bottom: 80px;
+    margin-top: 0px;
 }
 
 .head .heading {
@@ -479,6 +467,7 @@ header {
 .photo-gallery {
     padding: 0 0 80px 0;
     width: 100%;
+    margin-top: 150px;
 }
 
 .photo-grid {
@@ -488,7 +477,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
-    height: 80vh;
+    height: 70vh;
     min-height: 600px;
 }
 
@@ -611,54 +600,82 @@ header {
     box-shadow: 0 10px 25px rgba(253, 103, 26, 0.5);
 }
 
-/* ========================================
-   MENU GALLERY GRID
-   ======================================== */
-.menu-gallery {
-    padding: 0 0 80px 0;
-    width: 100%;
-}
-
+/* ========================================    
+   MENU GALLERY GRID    
+======================================== */
 .menu-grid {
-    max-width: 1400px;
-    margin: 40px auto 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 450px); /* 3 columns, 450px each */
+    grid-template-rows: repeat(2, 300px);    /* 2 rows, 400px each */
     gap: 20px;
-    min-height: 600px;
+    padding: 20px;
+    max-width: fit-content; /* shrink-wrap to grid size */
+    margin: 0 auto;
+
+    /* Ensure items always fill their grid cells */
+    align-items: stretch;
+    justify-items: stretch;
 }
 
 .menu-item {
-    background: #1a1a1a;
-    border-radius: 20px;
-    overflow: hidden;
     position: relative;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    border: 2px solid #333;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    min-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: 100%;
 }
 
-.menu-item:hover,
-.menu-item.active {
-    transform: scale(1.03);
-    box-shadow: 0 20px 50px rgba(253, 103, 26, 0.3);
-    border-color: #fd671a;
+/* First row: only 2 items */
+.menu-item:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 3; /* spans col 1–2 */
 }
 
+.menu-item:nth-child(2) {
+    grid-area: 1 / 3 / 2 / 4; /* col 3 */
+}
+
+/* Second row: 3 items */
+.menu-item:nth-child(3) {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.menu-item:nth-child(4) {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.menu-item:nth-child(5) {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+/* Hover effect */
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+      width: 100%;
+    height: 100%;
+}
+
+/* Fix: make images fill grid cell */
 .menu-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: grayscale(70%) contrast(1.1);
-    transition: all 0.4s ease;
+    object-fit: cover;   /* fill box, crop edges nicely */
+    object-position: center; /* keep center visible */
+    transition: transform 0.3s ease;
 }
 
-.menu-item:hover img,
-.menu-item.active img {
-    filter: grayscale(0%) contrast(1.2);
-    transform: scale(1.1);
+
+.menu-item:hover img {
+    transform: scale(1.05);
 }
 
 .menu-overlay {
@@ -667,54 +684,63 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(253, 103, 26, 0.4));
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.menu-info h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    margin: 2px 0 0 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.arrow-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 2;
-}
-
-.menu-item:hover .menu-overlay,
-.menu-item.active .menu-overlay {
-    opacity: 1;
-}
-
-.menu-text {
     color: white;
-    font-size: 1.3em;
-    font-weight: 700;
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    font-family: 'inter', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    align-self: flex-end;
+    margin-top: auto;
 }
 
-.menu-item:nth-child(1) {
-    grid-row: 1;
-    grid-column: 1 / 3;
-}
-
-.menu-item:nth-child(2) {
-    grid-row: 1;
-    grid-column: 3;
-}
-
-.menu-item:nth-child(3) {
-    grid-row: 2;
-    grid-column: 1;
-}
-
-.menu-item:nth-child(4) {
-    grid-row: 2;
-    grid-column: 2;
-}
-
-.menu-item:nth-child(5) {
-    grid-row: 2;
-    grid-column: 3;
+.menu-item:hover .arrow-icon {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(3px);
 }
 
 /* ========================================
@@ -734,111 +760,297 @@ header {
 /* ========================================
    RESERVATION SECTION
    ======================================== */
+/* ========================================
+   RESERVATION SECTION - UPDATED
+   ======================================== */
 .reservation-section {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
     gap: 0;
-    margin: 0;
+    margin-left: 16rem;
+    margin-right: 13rem;
 }
 
+/* LEFT IMAGE */
 .left-image {
     position: relative;
     overflow: hidden;
     width: 50%;
     height: auto;
+    margin: 0rem;
 }
 
 .left-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, filter 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 15px;
+    filter: grayscale(100%);
+    cursor: pointer;
 }
 
+/* HOVER EFFECT */
 .left-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.05);      
+    filter: grayscale(0%);       
+    border-radius: 25px;         
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+}
+
+/* CLICK / TOUCH EFFECT */
+.left-image:active img {
+    transform: scale(1.05);      
+    filter: grayscale(0%);       
+    border-radius: 25px;         
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
 }
 
 .reservation-form {
     width: 50%;
-    padding: 60px 50px;
-    background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+    padding: 40px 50px;
+    background: #000;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color: #fff;
+    margin: 0rem;
 }
 
-.reservation-form h2 {
-    color: #fd671a;
-    margin-bottom: 20px;
-    font-size: 2em;
+.header-text {
+    color: #ff6b35;
+    font-size: 24px;
+    font-weight: bold;
     text-transform: uppercase;
-    border-bottom: 2px solid #fd671a;
-    padding-bottom: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #ff6b35;
+    padding-bottom: 15px;
 }
 
-.reservation-form label {
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #ff8c42;
+.form-group {
+    margin-bottom: 40px;
+    margin-top: 20px;
 }
 
-.reservation-form input,
-.reservation-form button {
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+label {
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input, textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 1em;
-    box-sizing: border-box;
-}
-
-.reservation-form input {
-    background: #222;
+    padding: 15px;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
     color: #fff;
-    border: 1px solid #444;
-    transition: border-color 0.3s;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
 }
 
-.reservation-form input:focus {
-    border-color: #fd671a;
+input:focus, textarea:focus {
     outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
 }
 
-.reservation-form button {
-    background: #fd671a;
-    color: #111;
+input::placeholder, textarea::placeholder {
+    color: #888;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #ff6b35;
+    color: #000;
     font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: auto;
+    align-self: flex-start;
 }
 
-.reservation-form button:hover {
+.submit-btn:hover {
     background: #ff8c42;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* ========================================
+   MOBILE RESPONSIVE FIXES
+   ======================================== */
+
+/* Tablets and smaller desktops */
+@media screen and (max-width: 1400px) {
+    .reservation-section {
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .reservation-section {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .reservation-section {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    
+    .reservation-form {
+        padding: 50px 30px;
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .reservation-section {
+        flex-direction: column;
+        min-height: auto;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .left-image {
+        width: 100%;
+        height: 40vh;
+    }
+    
+    .reservation-form {
+        width: 100%;
+        padding: 40px 25px;
+    }
+    
+    .header-text {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    .reservation-section {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    .left-image {
+        height: 35vh;
+    }
+    
+    .reservation-form {
+        padding: 30px 20px;
+    }
+    
+    .header-text {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .form-group {
+        margin-bottom: 25px;
+        margin-top: 15px;
+    }
+    
+    input, textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .submit-btn {
+        padding: 15px 25px;
+        font-size: 13px;
+        width: 100%;
+        align-self: stretch;
+    }
+}
+
+/* Extra small mobile devices */
+@media screen and (max-width: 320px) {
+    .reservation-section {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+    
+    .reservation-form {
+        padding: 20px 15px;
+    }
+    
+    .header-text {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
 }
 
 /* ========================================
    MAP SECTION
    ======================================== */
-.map-section {
-    width: 100%;
-    height: 400px;
-    margin: 0;
-    padding: 0;
+.map-container {
+    width: 73%;              /* almost full width, with some padding on sides */
+          /* limits width on large screens */
+    height: 400px;           /* desktop height */
+    margin: 11rem auto;       /* center horizontally with top & bottom spacing */
+    border-radius: 15px;     /* rounded corners */
+    overflow: hidden;        /* ensures iframe respects border-radius */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* subtle shadow */
+    transition: transform 0.3s ease; /* for hover effect */
 }
 
-.map-section iframe {
+.map-container iframe {
     width: 100%;
     height: 100%;
     border: none;
-    margin: 0;
-    padding: 0;
     display: block;
 }
+
+/* Optional hover effect */
+.map-container:hover {
+    transform: scale(1.02); /* slight zoom on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .map-container {
+        height: 300px;       /* shorter height on mobile */
+        width: 95%;          /* more padding on small screens */
+    }
+}
+
+
 
 /* ========================================
    FOOTER SECTION
@@ -1480,3 +1692,15 @@ footer {
         color: black;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

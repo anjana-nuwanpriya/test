@@ -36,17 +36,19 @@
                 <span></span>
             </div>
         </nav>
+        
 
         <!-- Hero Section -->
         <section class="main">
             <h2 class="heading_1">ENERGIZED YOUR VIBE WITH "CC"</h2>
             <div class="about_text">
-                <h1>
-                    Cafe Connect is a privately held café based in Kiribathgoda, Western Province, Sri Lanka. 
-                    It specializes in offering premium coffee, refreshing beverages, and a variety of freshly prepared meals and snacks.
-                    The café provides a warm and welcoming environment, ideal for casual meet-ups, professional gatherings, or simply enjoying a relaxing break. 
-                    Cafe Connect is dedicated to delivering quality flavors, excellent service, and a memorable dining experience for all its guests.
-                </h1>
+<h1 class="custom-text">
+    Cafe Connect is a privately held café based in Kiribathgoda, Western Province, Sri Lanka. 
+    It specializes in offering premium coffee, refreshing beverages, and a variety of freshly prepared meals and snacks.
+    The café provides a warm and welcoming environment, ideal for casual meet-ups, professional gatherings, or simply enjoying a relaxing break. 
+    Cafe Connect is dedicated to delivering quality flavors, excellent service, and a memorable dining experience for all its guests.
+</h1>
+
             </div>
 
             <div class="main_btn">
@@ -60,7 +62,11 @@
     <!-- ========== MAIN CONTENT ========== -->
     <main>
         <!-- Photo & Video Gallery Section -->
-        <section class="photo-gallery sec">     
+        <section class="photo-gallery sec">  
+            
+            <!-- <div style="width:100%; height:3cm;"></div> -->
+
+
             <div class="head">         
                 <h1 class="heading_1">Our Gallery</h1>         
                 <p class="heading">Experience the atmosphere of Cafe Connect</p>     
@@ -121,49 +127,99 @@
                     SPECIALTY COFFEE IN SRI LANKA
                 </div>
 
-                <h2 class="heading_1">DISCOVER OUR MENU</h2>
+                <!-- <h2 class="heading_1">DISCOVER OUR MENU</h2> -->
             </div>
 
             <!-- Menu Gallery Section -->
             <div class="menu-gallery">
                 <div class="head">
-                    <h1 class="heading_1">Our Menu</h1>
+                    
+                    <h1 class="heading_1">DISCOVER OUR MENU</h1>
                     <p class="heading">Explore our delicious offerings</p>
                 </div>
                 
-                <!-- Menu Grid -->
-                <div class="menu-grid">
-                    <!-- Menu Items with PDF Links -->
-                    <div class="menu-item">
-                        <a href="pdfs/coffee-menu.pdf" target="_blank">
-                            <img src="img/1.png" alt="Coffee Menu">
-                        </a>
+                   <!-- Menu Grid -->
+    <div class="menu-grid">
+        <!-- Coffee Menu -->
+        <div class="menu-item">
+            <a href="pdfs/coffee-menu.pdf" target="_blank">
+                <img src="img/1.png" alt="Coffee Menu">
+                <div class="menu-overlay">
+                    <div class="menu-header">
+                        <div class="menu-info">
+                            <h3>Coffee</h3>
+                            <p>Available 24/7</p>
+                        </div>
                     </div>
-                    
-                    <div class="menu-item">
-                        <a href="pdfs/food-menu.pdf" target="_blank">
-                            <img src="img/2.png" alt="Food Menu">
-                        </a>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <a href="pdfs/dessert-menu.pdf" target="_blank">
-                            <img src="img/3.png" alt="Dessert Menu">
-                        </a>
-                    </div>
-
-                    <div class="menu-item">
-                        <a href="pdfs/drinks-menu.pdf" target="_blank">
-                            <img src="img/4.png" alt="Drinks Menu">
-                        </a>
-                    </div>
-
-                    <div class="menu-item">
-                        <a href="pdfs/specials-menu.pdf" target="_blank">
-                            <img src="img/5.png" alt="Specials Menu">
-                        </a>
-                    </div>
+                    <div class="arrow-icon">↗</div>
                 </div>
+            </a>
+        </div>
+
+        <!-- Food Menu -->
+        <div class="menu-item">
+            <a href="Coffee and snacks.html" target="_blank">
+                <img src="img/2.png" alt="Food Menu">
+                <div class="menu-overlay">
+                    <div class="menu-header">
+                        <div class="menu-info">
+                            <h3>Food</h3>
+                            <p>6:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="arrow-icon">↗</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Dessert Menu -->
+        <div class="menu-item">
+            <a href="pdfs/dessert-menu.pdf" target="_blank">
+                <img src="img/3.png" alt="Dessert Menu">
+                <div class="menu-overlay">
+                    <div class="menu-header">
+                        <div class="menu-info">
+                            <h3>Dessert</h3>
+                            <p>12:00 PM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="arrow-icon">↗</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Drinks Menu -->
+        <div class="menu-item">
+            <a href="pdfs/drinks-menu.pdf" target="_blank">
+                <img src="img/4.png" alt="Drinks Menu">
+                <div class="menu-overlay">
+                    <div class="menu-header">
+                        <div class="menu-info">
+                            <h3>Drinks</h3>
+                            <p>10:00 AM - 12:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="arrow-icon">↗</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Specials Menu -->
+        <div class="menu-item">
+            <a href="pdfs/specials-menu.pdf" target="_blank">
+                <img src="img/5.png" alt="Specials Menu">
+                <div class="menu-overlay">
+                    <div class="menu-header">
+                        <div class="menu-info">
+                            <h3>Specials</h3>
+                            <p>Limited Time Only</p>
+                        </div>
+                    </div>
+                    <div class="arrow-icon">↗</div>
+                </div>
+            </a>
+        </div>
+    </div>
             </div>
         </section>
 
@@ -182,40 +238,61 @@
             <!-- Right side reservation form -->
             <div class="reservation-form">
                 <h2>Make a Reservation</h2>
-                <form>
+              <form>
+                <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" placeholder="Enter your phone" required>
-
-                    <label for="date">Date</label>
-                    <input type="date" id="date" required>
-
-                    <label for="time">Time</label>
-                    <input type="time" id="time" required>
-
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="phone">Contact Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group half">
+                        <label for="occasion">Occasion</label>
+                        <input type="text" id="occasion" name="occasion">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group half">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
                     <label for="guests">Number of Guests</label>
-                    <input type="number" id="guests" min="1" max="20" required>
-
-                    <button type="submit">Reserve Now</button>
-                </form>
+                    <input type="number" id="guests" name="guests" min="1" max="50" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Leave a note</label>
+                    <textarea id="notes" name="notes" placeholder="Special requirements, dietary restrictions, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="btn">SEND REQUEST</button>
+            </form>
             </div>
         </section>
 
-        <!-- Map Section -->
-        <section class="map-section">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2733974669095!2d79.9279249762538!3d6.9770343930237555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257004157bc67%3A0x52ee4e50727dcf31!2sCafe%20Connect!5e0!3m2!1sen!2slk!4v1756899039827!5m2!1sen!2slk" 
-                allowfullscreen 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Cafe Connect Location">
-            </iframe>
-        </section>
+<!-- Map Section -->
+<div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2733974669095!2d79.9279249762538!3d6.9770343930237555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257004157bc67%3A0x52ee4e50727dcf31!2sCafe%20Connect!5e0!3m2!1sen!2slk!4v1756899039827!5m2!1sen!2slk" 
+        allowfullscreen 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Cafe Connect Location">
+    </iframe>
+</div>
+
+
     </main>
 
     <!-- ========== FOOTER ========== -->
@@ -279,5 +356,22 @@
 
     <!-- ========== JAVASCRIPT SECTION ========== -->
     <script src="script.js"></script>
+
+
+
+
+
+<script>
+    const menuBtn = document.getElementById('menu_btn');
+    const navLinks = document.getElementById('nav_links');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active'); // slide menu in/out
+        menuBtn.classList.toggle('active'); // animate hamburger to X
+    });
+</script>
+
+
+
 </body>
 </html>
