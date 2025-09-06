@@ -178,6 +178,9 @@ header {
     list-style: none;
     right: -100%;
 }
+.nav_items li:nth-last-child(2) {
+    margin-right: 300px; /* adds 30px extra space after CONTACT */
+}
 
 /* Menu items */
 .nav_items li {
@@ -288,44 +291,36 @@ header {
 /* ========================================
    BUTTONS STYLING
    ======================================== */
+
+/* ========================================
+   BUTTONS STYLING - SIMPLE ANIMATION*/
+ 
 .btn {
     padding: 12px 20px;
     font-size: 16px;
     letter-spacing: 1.5px;
     cursor: pointer;
-    background: linear-gradient(45deg, #fd671a, #ff8c42);
+    background: #fd671a; /* Solid orange background */
     border: 2px solid #fd671a;
     color: #fff;
     border-radius: 8px;
     font-weight: 600;
     text-transform: uppercase;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    /* background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); */
-    transition: left 0.5s ease;
-}
-
-.btn:hover::before {
-    left: 100%;
+    transition: transform 0.3s ease;
 }
 
 .btn:hover {
-    background: transparent;
-    border-color: #fd671a;
-    color: #fd671a;
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(253, 103, 26, 0.3);
+    color: #fff !important; /* Force text to stay white */
 }
+
+/* Ensure text color never changes on any interaction */
+.btn:focus,
+.btn:active,
+.btn:visited {
+    color: #fff !important;
+}
+
 
 .btn2 {
     background-color: transparent;
