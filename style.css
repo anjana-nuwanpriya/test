@@ -760,18 +760,15 @@ header {
 /* ========================================
    RESERVATION SECTION
    ======================================== */
-/* ========================================
-   RESERVATION SECTION - UPDATED
-   ======================================== */
 .reservation-section {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
     gap: 0;
+
     margin-left: 16rem;
     margin-right: 13rem;
 }
-
 /* LEFT IMAGE */
 .left-image {
     position: relative;
@@ -786,8 +783,8 @@ header {
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease, filter 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 15px;
-    filter: grayscale(100%);
+    border-radius: 15px;         /* default rounded corners */
+    filter: grayscale(100%);     /* black & white */
     cursor: pointer;
 }
 
@@ -796,225 +793,113 @@ header {
     transform: scale(1.05);      
     filter: grayscale(0%);       
     border-radius: 25px;         
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6); /* warm orange glow */
 }
 
-/* CLICK / TOUCH EFFECT */
+/* CLICK / TOUCH EFFECT (works for cursor click too) */
 .left-image:active img {
     transform: scale(1.05);      
     filter: grayscale(0%);       
     border-radius: 25px;         
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6); /* warm orange glow */
 }
 
-.reservation-form {
-    width: 50%;
-    padding: 40px 50px;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 0rem;
-}
 
-.header-text {
-    color: #ff6b35;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-    border-bottom: 2px solid #ff6b35;
-    padding-bottom: 15px;
-}
 
-.form-group {
-    margin-bottom: 40px;
-    margin-top: 20px;
-}
 
-.form-row {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
+        .reservation-form {
+            width: 50%;
+            padding: 40px 50px;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0rem;
+        }
 
-.form-group.half {
-    flex: 1;
-}
+        .header-text {
+            color: #ff6b35;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ff6b35;
+            padding-bottom: 15px;
+        }
 
-label {
-    display: block;
-    color: #ccc;
-    font-size: 14px;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
+        .form-group {
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
 
-input, textarea {
-    width: 100%;
-    padding: 15px;
-    background: #333;
-    border: 1px solid #555;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-}
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
 
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #ff6b35;
-    box-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
-}
+        .form-group.half {
+            flex: 1;
+        }
 
-input::placeholder, textarea::placeholder {
-    color: #888;
-}
+        label {
+            display: block;
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
 
-textarea {
-    min-height: 100px;
-    resize: vertical;
-}
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            background: #333;
+            border: 1px solid #555;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
 
-.submit-btn {
-    background: #ff6b35;
-    color: #000;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 18px 30px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-    width: auto;
-    align-self: flex-start;
-}
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
+        }
 
-.submit-btn:hover {
-    background: #ff8c42;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-}
+        input::placeholder, textarea::placeholder {
+            color: #888;
+        }
 
-/* ========================================
-   MOBILE RESPONSIVE FIXES
-   ======================================== */
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
 
-/* Tablets and smaller desktops */
-@media screen and (max-width: 1400px) {
-    .reservation-section {
-        margin-left: 8rem;
-        margin-right: 8rem;
-    }
-}
+        .submit-btn {
+            background: #ff6b35;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 18px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            width: auto;
+            align-self: flex-start;
+        }
 
-@media screen and (max-width: 1200px) {
-    .reservation-section {
-        margin-left: 4rem;
-        margin-right: 4rem;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .reservation-section {
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
-    
-    .reservation-form {
-        padding: 50px 30px;
-    }
-}
-
-/* Tablets */
-@media screen and (max-width: 768px) {
-    .reservation-section {
-        flex-direction: column;
-        min-height: auto;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    
-    .left-image {
-        width: 100%;
-        height: 40vh;
-    }
-    
-    .reservation-form {
-        width: 100%;
-        padding: 40px 25px;
-    }
-    
-    .header-text {
-        font-size: 20px;
-        text-align: center;
-    }
-    
-    .form-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* Mobile devices */
-@media screen and (max-width: 480px) {
-    .reservation-section {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-    }
-    
-    .left-image {
-        height: 35vh;
-    }
-    
-    .reservation-form {
-        padding: 30px 20px;
-    }
-    
-    .header-text {
-        font-size: 18px;
-        margin-bottom: 30px;
-    }
-    
-    .form-group {
-        margin-bottom: 25px;
-        margin-top: 15px;
-    }
-    
-    input, textarea {
-        padding: 12px;
-        font-size: 14px;
-    }
-    
-    .submit-btn {
-        padding: 15px 25px;
-        font-size: 13px;
-        width: 100%;
-        align-self: stretch;
-    }
-}
-
-/* Extra small mobile devices */
-@media screen and (max-width: 320px) {
-    .reservation-section {
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
-    }
-    
-    .reservation-form {
-        padding: 20px 15px;
-    }
-    
-    .header-text {
-        font-size: 16px;
-        letter-spacing: 1px;
-    }
-}
+        .submit-btn:hover {
+            background: #ff8c42;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
 
 /* ========================================
    MAP SECTION
@@ -1050,8 +935,6 @@ textarea {
     }
 }
 
-
-
 /* ========================================
    FOOTER SECTION
    ======================================== */
@@ -1061,15 +944,17 @@ footer {
     margin-top: 0;
 }
 
+/* Main footer wrapper */
 .footer_container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
     display: grid;
-    gap: 50px 30px;
-    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 800px;  /* spacing between rows & columns */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
 }
 
+/* Column Headings */
 .footer_col h4 {
     margin-bottom: 30px;
     font-size: 1.8rem;
@@ -1077,6 +962,7 @@ footer {
     color: #fd671a;
 }
 
+/* Logo & Brand */
 .footer_logo {
     display: flex;
     align-items: center;
@@ -1096,6 +982,7 @@ footer {
     color: #fff;
 }
 
+/* Description Text */
 .footer_text {
     max-width: 300px;
     color: #999;
@@ -1103,10 +990,13 @@ footer {
     line-height: 1.7;
 }
 
+/* Social Icons */
 .footer_socials {
     display: flex;
     gap: 15px;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer_socials a {
@@ -1130,24 +1020,31 @@ footer {
     box-shadow: 0 10px 20px rgba(253, 103, 26, 0.3);
 }
 
-.footer_links {
+/* Footer Links */
+.footer_links,
+.footer_links_2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer_links a {
+.footer_links a,
+.footer_links_2 a {
     text-decoration: none;
-    color: #999;
-    transition: all 0.3s ease;
-    padding: 5px 0;
+    color: #fff;   /* default link color */
+    font-size: 16px;
+    transition: color 0.3s ease;
+    text-transform: none;  /* keeps your original text (not forced uppercase/lowercase) */
 }
 
-.footer_links a:hover {
-    color: #fd671a;
-    padding-left: 10px;
+.footer_links a:hover,
+.footer_links_2 a:hover {
+    color: #fd671a; /* orange hover */
 }
+
 
 /* ========================================
    SCROLL-TO-TOP BUTTON
@@ -1700,7 +1597,73 @@ footer {
 
 
 
+/* Add these mobile responsive rules to fix the reservation section */
 
+/* Tablet view fixes */
+@media screen and (max-width: 1024px) {
+    .reservation-section {
+        margin-left: 8rem;
+        margin-right: 6rem;
+    }
+}
+
+/* Mobile view fixes */
+@media screen and (max-width: 768px) {
+    .reservation-section {
+        flex-direction: column;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        min-height: auto;
+    }
+    
+    .left-image,
+    .reservation-form {
+        width: 100%;
+    }
+    
+    .reservation-form {
+        padding: 30px 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-text {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/* Small mobile fixes */
+@media screen and (max-width: 480px) {
+    .reservation-section {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    .reservation-form {
+        padding: 20px 15px;
+    }
+    
+    .header-text {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    
+    input, textarea {
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .submit-btn {
+        padding: 15px 25px;
+        font-size: 13px;
+        width: 100%;
+        text-align: center;
+    }
+}
 
 
 

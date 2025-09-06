@@ -16,9 +16,13 @@
         <!-- Navigation Bar -->
         <nav class="navbar">
             <!-- Logo -->
-            <div class="logo">
-                <img src="img/log.png" alt="Cafe Connect Logo">
-            </div>
+<div class="logo">
+    <a href="index.html">
+        <img src="img/log.png" alt="Cafe Connect Logo">
+    </a>
+</div>
+
+
 
             <!-- Navigation Links -->
             <ul class="nav_items" id="nav_links">
@@ -26,7 +30,7 @@
                 <li><a href="#services">EAT | DRINK</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><button class="btn">RESERVATION</button></li>
+              <li><a href="#reservation" class="btn">RESERVATION</a></li>
             </ul>
 
             <!-- Mobile Hamburger Menu -->
@@ -142,13 +146,13 @@
     <div class="menu-grid">
         <!-- Coffee Menu -->
         <div class="menu-item">
-            <a href="pdfs/coffee-menu.pdf" target="_blank">
+            <a href="1.Ice-cream menu.html" >
                 <img src="img/1.png" alt="Coffee Menu">
                 <div class="menu-overlay">
                     <div class="menu-header">
                         <div class="menu-info">
-                            <h3>Coffee</h3>
-                            <p>Available 24/7</p>
+                            <h3>Roll Ice-Cream Menu</h3>
+                            <p>10:00 AM - 10:00 PM</p>
                         </div>
                     </div>
                     <div class="arrow-icon">↗</div>
@@ -158,13 +162,13 @@
 
         <!-- Food Menu -->
         <div class="menu-item">
-            <a href="Coffee and snacks.html" target="_blank">
+            <a href="2.Coffee and snacks.html" >
                 <img src="img/2.png" alt="Food Menu">
                 <div class="menu-overlay">
                     <div class="menu-header">
                         <div class="menu-info">
-                            <h3>Food</h3>
-                            <p>6:00 AM - 11:00 PM</p>
+                            <h3>Cafe Menu</h3>
+                            <p>10:00 AM - 10:00 PM</p>
                         </div>
                     </div>
                     <div class="arrow-icon">↗</div>
@@ -174,13 +178,13 @@
 
         <!-- Dessert Menu -->
         <div class="menu-item">
-            <a href="pdfs/dessert-menu.pdf" target="_blank">
+            <a href="3.dining.html" >
                 <img src="img/3.png" alt="Dessert Menu">
                 <div class="menu-overlay">
                     <div class="menu-header">
                         <div class="menu-info">
-                            <h3>Dessert</h3>
-                            <p>12:00 PM - 10:00 PM</p>
+                            <h3>Dining Menu</h3>
+                            <p>10:00 PM - 10:00 PM</p>
                         </div>
                     </div>
                     <div class="arrow-icon">↗</div>
@@ -190,13 +194,13 @@
 
         <!-- Drinks Menu -->
         <div class="menu-item">
-            <a href="pdfs/drinks-menu.pdf" target="_blank">
+            <a href="4.bite.html" >
                 <img src="img/4.png" alt="Drinks Menu">
                 <div class="menu-overlay">
                     <div class="menu-header">
                         <div class="menu-info">
-                            <h3>Drinks</h3>
-                            <p>10:00 AM - 12:00 AM</p>
+                            <h3>Bite Menu</h3>
+                            <p>10:00 AM - 10:00 PM</p>
                         </div>
                     </div>
                     <div class="arrow-icon">↗</div>
@@ -206,13 +210,13 @@
 
         <!-- Specials Menu -->
         <div class="menu-item">
-            <a href="pdfs/specials-menu.pdf" target="_blank">
+            <a href="5.crab.html">
                 <img src="img/5.png" alt="Specials Menu">
                 <div class="menu-overlay">
                     <div class="menu-header">
                         <div class="menu-info">
-                            <h3>Specials</h3>
-                            <p>Limited Time Only</p>
+                            <h3>Crab Menu</h3>
+                            <p>Reservations Only</p>
                         </div>
                     </div>
                     <div class="arrow-icon">↗</div>
@@ -229,57 +233,57 @@
         </section>
 
         <!-- Reservation Section -->
-        <section class="reservation-section">
-            <!-- Left side image -->
-            <div class="left-image">
-                <img src="img/IMG_0349.png" alt="Cafe Interior">
+<section id="reservation" class="reservation-section">
+    <!-- Left side image -->
+    <div class="left-image">
+        <img src="img/IMG_0349.png" alt="Cafe Interior">
+    </div>
+                     
+    <!-- Right side reservation form -->
+    <div class="reservation-form">
+        <h2 class="header-text">Make a Reservation</h2>
+      <form>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
-            
-            <!-- Right side reservation form -->
-            <div class="reservation-form">
-                <h2>Make a Reservation</h2>
-              <form>
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+                             
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="phone">Contact Number</label>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="phone">Contact Number</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group half">
-                        <label for="occasion">Occasion</label>
-                        <input type="text" id="occasion" name="occasion">
-                    </div>
+                <div class="form-group half">
+                    <label for="occasion">Occasion</label>
+                    <input type="text" id="occasion" name="occasion">
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="date">Date</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    <div class="form-group half">
-                        <label for="time">Time</label>
-                        <input type="time" id="time" name="time" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="guests">Number of Guests</label>
-                    <input type="number" id="guests" name="guests" min="1" max="50" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="notes">Leave a note</label>
-                    <textarea id="notes" name="notes" placeholder="Special requirements, dietary restrictions, etc."></textarea>
-                </div>
-                
-                <button type="submit" class="btn">SEND REQUEST</button>
-            </form>
             </div>
-        </section>
+                             
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group half">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
+                             
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests" name="guests" min="1" max="50" required>
+            </div>
+                             
+            <div class="form-group">
+                <label for="notes">Leave a note</label>
+                <textarea id="notes" name="notes" placeholder="Special requirements, dietary restrictions, etc."></textarea>
+            </div>
+                             
+            <button type="submit" class="submit-btn">SEND REQUEST</button>
+        </form>
+    </div>
+</section>
 
 <!-- Map Section -->
 <div class="map-container">
@@ -295,61 +299,56 @@
 
     </main>
 
-    <!-- ========== FOOTER ========== -->
-    <footer>
-        <div class="sec footer_container">
-            <!-- Brand Column -->
-            <div class="footer_col">
-                <div class="footer_logo logo">
-                    <img src="img/log.png" alt="Cafe Connect Logo">
-                    <span>Cafe Connect</span>
-                </div>
-                <p class="footer_text">
-                    Our job is to fill your tummy with delicious food and with fast and free delivery time.
-                </p>
-                <!-- Social Media Links -->
-                <ul class="footer_socials">
-                    <li><a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a></li>
-                    <li><a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
-                    <li><a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a></li>
-                </ul>
+   <!-- ========== FOOTER ========== -->
+<footer>
+    <div class="sec footer_container">
+        <!-- Brand Column -->
+        <div class="footer_col">
+            <div class="footer_logo logo">
+                <img src="img/log.png" alt="Cafe Connect Logo">
+                <!-- <span>Cafe Connect</span> -->
             </div>
-            
-            <!-- About Column -->
-            <div class="footer_col">
-                <h4>About</h4>
-                <ul class="footer_links">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Menu</a></li>
-                </ul>
-            </div>
+            <p class="footer_text">
+                Our job is to fill your tummy with delicious food with fast and free delivery.
+            </p>
+            <!-- Social Media Links -->
+<ul class="footer_socials">
+    <li>
+        <a href="https://www.instagram.com/cafeconnect.lk/" target="_blank" aria-label="Instagram">
+            <i class="ri-instagram-fill"></i>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com/profile.php?id=61573652434782" target="_blank" aria-label="Facebook">
+            <i class="ri-facebook-fill"></i>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.tiktok.com/@cafeconnect.lk?_t=ZS-8zVTZo35w4W&_r=1" target="_blank" aria-label="TikTok">
+            <i class="ri-tiktok-fill"></i>
+        </a>
+    </li>
+</ul>
 
-            <!-- Company Column -->
-            <div class="footer_col">
-                <h4>Company</h4>
-                <ul class="footer_links">
-                    <li><a href="#">My Food In</a></li>
-                    <li><a href="#">Partner</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
 
-            <!-- Support Column -->
-            <div class="footer_col">
-                <h4>Support</h4>
-                <ul class="footer_links">
-                    <li><a href="#">Account</a></li>
-                    <li><a href="#">Support Center</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Accessibility</a></li>
-                </ul>
-            </div>
         </div>
-    </footer>
+
+
+
+        <!-- Company Column -->
+        <div class="footer_col">
+            <h4>Find Us</h4>
+            <ul class="footer_links">
+                <li><a href="https://maps.app.goo.gl/K8jaGhjM49ZEA8gV7" target="_blank">157 Makola Rd, Kiribathgoda</a></li>
+                <li><a href="tel:+94711773573">+94 71 177 3573</a></li>
+                <li><a href="mailto:connect@cafeconnect.lk">connect@cafeconnect.lk</a></li>
+            </ul>
+        </div>
+
+     
+    </div>
+</footer>
+
 
     <!-- ========== SCROLL TO TOP BUTTON ========== -->
     <span class="top" id="to-top"><i class="ri-arrow-up-circle-line"></i></span>
