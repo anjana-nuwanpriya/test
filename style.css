@@ -75,16 +75,23 @@ body {
 header {
     position: relative;
     padding: 2em 0;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url(img/DSC01886.png);
+    margin-top: 50px;  /* 👈 adds space above the header + background image */
+    
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                url(img/DSC01886.png);
+
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+   background-size: 100% 100%;
+/* keeps full image, no crop */
+    background-position: bottom center;
     background-attachment: fixed;
+
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 /* ========================================
    NAVIGATION BAR - DESKTOP & MOBILE
@@ -179,9 +186,8 @@ header {
     list-style: none;
     right: -100%;
 }
-.nav_items li:nth-last-child(2) {
-    margin-right: 300px; /* adds 30px extra space after CONTACT */
-}
+/* .nav_items li:nth-last-child(2) {
+    margin-right: 300px; /* adds 30px extra space after CONTACT } */
 
 /* Menu items */
 .nav_items li {
@@ -290,63 +296,70 @@ header {
 }
 
 /* ========================================
-   BUTTONS STYLING
+   BUTTONS STYLING - CLEAN GLOW EFFECT
    ======================================== */
 
-/* ========================================
-   BUTTONS STYLING - SIMPLE ANIMATION*/
- 
-.btn {
-    padding: 12px 20px;
-    font-size: 16px;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    background: #fd671a; /* Solid orange background */
-    border: 2px solid #fd671a;
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: transform 0.3s ease;
-}
+/* Solid primary button with glow */
+        .btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #fd671a, #ff8c42);
+            border: 2px solid #fd671a;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
 
-.btn:hover {
-    transform: translateY(-3px);
-    color: #fff !important; /* Force text to stay white */
-}
-
-/* Ensure text color never changes on any interaction */
-.btn:focus,
-.btn:active,
-.btn:visited {
-    color: #fff !important;
-}
+        .btn:hover {
+            background: transparent;
+            border-color: #fd671a;
+            color: #fd671a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(253, 103, 26, 0.3);
+        }
 
 
+
+/* Black button with strong orange glow */
 .btn2 {
-    background-color: transparent;
-    margin-left: 15px;
-    align-items: center;
     display: flex;
-    border-color: #fd671a;
-}
-
-.btn2 i {
-    font-size: 1.5em;
-    margin-right: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    margin-left: 15px;
+    border: 2px solid #fd671a;
+    border-radius: 8px;
     color: #fd671a;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #000;   /* pure black background */
+    cursor: pointer;
+
+    /* Initial glow */
+    box-shadow: 
+        0 0 10px #fd671a,
+        0 0 20px #fd671a,
+        0 0 30px #fd671a;
+
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
+/* Stronger glow when hovered */
 .btn2:hover {
-    background: linear-gradient(45deg, #fd671a, #ff8c42);
-    color: #fff;
+    box-shadow: 
+        0 0 15px #fd671a,
+        0 0 30px #fd671a,
+        0 0 45px #fd671a,
+        0 0 60px #fd671a;
+    transform: translateY(-3px);
 }
 
-.btn2:hover i {
-    color: #fff;
-    animation: bounce 1s ease-in-out;
-}
+/* Remove all hover, focus, and active states */
+/* No :hover, :focus, :active effects - buttons stay static with glow only */
 
 /* ========================================
    MAIN HERO SECTION
@@ -738,13 +751,15 @@ header {
     border-color: rgba(255, 255, 255, 0.5);
     transform: translateX(3px);
 }
-
 /* ========================================
-   SPECIAL EVENTS SECTION
+   SPECIAL EVENTS SECTION - RESPONSIVE
    ======================================== */
 .special-events {
     text-align: center;
     padding: 60px 0;
+    width: 98%;              /* increased width from default */
+    max-width: 2000px;       /* maximum width limit */
+    margin: 0 auto;          /* center the section */
 }
 
 .special-events .heading_1 {
@@ -754,17 +769,18 @@ header {
 }
 
 /* ========================================
-   RESERVATION SECTION
+   RESERVATION SECTION - RESPONSIVE
    ======================================== */
 .reservation-section {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
     gap: 0;
-
-    margin-left: 16rem;
-    margin-right: 13rem;
+    width: 95%;              /* increased width from fixed margins */
+    max-width: 1400px;       /* maximum width limit */
+    margin: 0 auto;          /* center the section */
 }
+
 /* LEFT IMAGE */
 .left-image {
     position: relative;
@@ -786,129 +802,277 @@ header {
 
 /* HOVER EFFECT */
 .left-image:hover img {
-    transform: scale(1.05);      
-    filter: grayscale(0%);       
-    border-radius: 25px;         
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    border-radius: 25px;
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6); /* warm orange glow */
 }
 
 /* CLICK / TOUCH EFFECT (works for cursor click too) */
 .left-image:active img {
-    transform: scale(1.05);      
-    filter: grayscale(0%);       
-    border-radius: 25px;         
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    border-radius: 25px;
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6); /* warm orange glow */
 }
 
+.reservation-form {
+    width: 50%;
+    padding: 40px 50px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0rem;
+}
 
+.header-text {
+    color: #ff6b35;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #ff6b35;
+    padding-bottom: 15px;
+}
 
+.form-group {
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
 
-        .reservation-form {
-            width: 50%;
-            padding: 40px 50px;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            margin: 0rem;
-        }
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 
-        .header-text {
-            color: #ff6b35;
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #ff6b35;
-            padding-bottom: 15px;
-        }
+.form-group.half {
+    flex: 1;
+}
 
-        .form-group {
-            margin-bottom: 40px;
-            margin-top: 20px;
-        }
+label {
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
 
-        .form-row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-            margin-top: 20px;
-        }
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
 
-        .form-group.half {
-            flex: 1;
-        }
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
+}
 
-        label {
-            display: block;
-            color: #ccc;
-            font-size: 14px;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
+input::placeholder, textarea::placeholder {
+    color: #888;
+}
 
-        input, textarea {
-            width: 100%;
-            padding: 15px;
-            background: #333;
-            border: 1px solid #555;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 14px;
-            transition: border-color 0.3s ease;
-        }
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
 
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #ff6b35;
-            box-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
-        }
+.submit-btn {
+    background: #ff6b35;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: auto;
+    align-self: flex-start;
+}
 
-        input::placeholder, textarea::placeholder {
-            color: #888;
-        }
+.submit-btn:hover {
+    background: #ff8c42;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
 
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
+/* ========================================
+   RESPONSIVE DESIGN - TABLET & MOBILE
+   ======================================== */
 
-        .submit-btn {
-            background: #ff6b35;
-            color: #000;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 18px 30px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            width: auto;
-            align-self: flex-start;
-        }
+/* LARGE TABLET (1024px and below) */
+@media (max-width: 1024px) {
+    .special-events {
+        width: 90%;
+        padding: 50px 0;
+    }
+    
+    .special-events .heading_1 {
+        font-size: 2.2em;
+    }
+    
+    .reservation-section {
+        width: 90%;
+    }
+    
+    .reservation-form {
+        padding: 30px 35px;
+    }
+    
+    .header-text {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+}
 
-        .submit-btn:hover {
-            background: #ff8c42;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-        }
+/* TABLET (768px and below) */
+@media (max-width: 768px) {
+    .special-events {
+        width: 95%;
+        padding: 40px 0;
+    }
+    
+    .special-events .heading_1 {
+        font-size: 2em;
+    }
+    
+    .reservation-section {
+        flex-direction: column;
+        width: 95%;
+        min-height: auto;
+    }
+    
+    .left-image,
+    .reservation-form {
+        width: 100%;
+    }
+    
+    .left-image {
+        height: 300px;
+        margin-bottom: 0;
+    }
+    
+    .reservation-form {
+        padding: 30px 25px;
+    }
+    
+    .header-text {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .form-group {
+        margin-bottom: 25px;
+        margin-top: 15px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+}
 
+/* MOBILE (480px and below) */
+@media (max-width: 480px) {
+    .special-events {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    
+    .special-events .heading_1 {
+        font-size: 1.8em;
+    }
+    
+    .reservation-section {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .reservation-form {
+        padding: 20px 15px;
+    }
+    
+    .header-text {
+        font-size: 18px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+    
+    input, textarea {
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .submit-btn {
+        padding: 15px 25px;
+        font-size: 13px;
+        width: 100%;
+        align-self: stretch;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+}
+
+/* VERY SMALL MOBILE (320px and below) */
+@media (max-width: 320px) {
+    .special-events {
+        padding: 25px 10px;
+    }
+    
+    .special-events .heading_1 {
+        font-size: 1.6em;
+    }
+    
+    .reservation-form {
+        padding: 15px 10px;
+    }
+    
+    .header-text {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+    
+    input, textarea {
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    .submit-btn {
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+}
 /* ========================================
    MAP SECTION
    ======================================== */
 .map-container {
-    width: 73%;              /* almost full width, with some padding on sides */
-          /* limits width on large screens */
+    width: 95%;              /* increased from 73% to 95% for more width */
+    max-width: 1400px;       /* maximum width limit for very large screens */
     height: 400px;           /* desktop height */
-    margin: 11rem auto;       /* center horizontally with top & bottom spacing */
+    margin: 11rem auto;      /* center horizontally with top & bottom spacing */
     border-radius: 15px;     /* rounded corners */
     overflow: hidden;        /* ensures iframe respects border-radius */
     box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* subtle shadow */
-    transition: transform 0.3s ease; /* for hover effect */
+    /* Removed transition and hover effect */
 }
 
 .map-container iframe {
@@ -918,9 +1082,16 @@ header {
     display: block;
 }
 
-/* Optional hover effect */
-.map-container:hover {
-    transform: scale(1.02); /* slight zoom on hover */
+/* Removed hover effect completely */
+/* .map-container:hover - REMOVED */
+
+/* Optional: Responsive design for mobile */
+@media (max-width: 768px) {
+    .map-container {
+        width: 90%;          /* slightly less width on mobile */
+        height: 300px;       /* shorter height on mobile */
+        margin: 8rem auto;   /* less top/bottom margin on mobile */
+    }
 }
 
 /* Mobile responsiveness */
@@ -962,7 +1133,10 @@ footer {
 .footer_logo {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: -20px;
+    width: 150px;
+    height: 150px;
 }
 
 .footer_logo img {
@@ -970,7 +1144,12 @@ footer {
     height: 50px;
     margin-right: 15px;
     border-radius: 50%;
+     margin-top: -20px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: -20px;
 }
+
 
 .footer_logo span {
     font-size: 1.8rem;
