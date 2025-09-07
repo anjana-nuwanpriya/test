@@ -1075,7 +1075,7 @@ footer::before {
 }
 
 .footer_col h4 {
-    color: #f39c12;
+    color: #ff8c42;
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     margin-bottom: 20px;
     font-weight: 600;
@@ -1126,7 +1126,7 @@ footer::before {
 .footer_logo span {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
     font-weight: bold;
-    color: #f39c12;
+    color: #e75d00;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -1183,7 +1183,7 @@ footer::before {
 }
 
 .footer_socials li:nth-child(1) a:hover {
-    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #e45b00);
 }
 
 .footer_socials li:nth-child(2) a:hover {
@@ -1221,7 +1221,7 @@ footer::before {
 }
 
 .footer_links li a:hover {
-    color: #f39c12;
+    color: #e74c3c;
     transform: translateX(5px);
 }
 
@@ -1269,7 +1269,7 @@ footer::before {
 }
 
 .quick_links li a:hover {
-    color: #f39c12;
+    color: #e74c3c;
     padding-left: 20px;
 }
 
@@ -1322,7 +1322,7 @@ footer::before {
     padding: clamp(10px, 2vw, 12px) clamp(16px, 3vw, 20px);
     border: none;
     border-radius: 0 25px 25px 0;
-    background: linear-gradient(135deg, #e74c3c, #f39c12);
+    background: linear-gradient(135deg, #e74c3c, #e74c3c);
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
