@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* ========================================
+       /* ========================================
            NAVIGATION BAR - DESKTOP & MOBILE
            ======================================== */
         .navbar {
@@ -63,7 +63,7 @@
             .navbar { padding: 10px 1rem; height: 8vh; }
         }
 
-        /* Logo styling */
+         /* Logo styling */
         .logo {
             font-size: 2.2em;
             font-weight: 700;
@@ -76,8 +76,8 @@
         .logo:hover { color: #fd671a; }
 
         .logo img {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             margin-right: 10px;
             border-radius: 50%;
             object-fit: cover;
@@ -88,6 +88,7 @@
             display: flex;
             gap: 20px;
             list-style: none;
+            align-items: center;
         }
 
         .nav_items li {
@@ -184,7 +185,6 @@
             .nav_items.active { right: 0; }
             .nav_menu { display: flex; }
         }
-
         /* ========================================
            HERO SECTION
            ======================================== */
@@ -582,7 +582,9 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="img/log.png" alt="Logo">
+   <a href="index.html">
+        <img src="img/log.png" alt="Cafe Connect Logo">
+    </a>
         </div>
         <ul class="nav_items" id="nav_links">
             <li><a href="index.html">HOME</a></li>
